@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://dnq7j453fgyfc"]
 
 [ext_resource type="Texture2D" uid="uid://dextb80cg3teu" path="res://content/twm/cursor.png" id="1_w0xpr"]
+[ext_resource type="Script" uid="uid://tf1werpavn74" path="res://GDScript/mouse.gd" id="1_x4qq7"]
+[ext_resource type="AudioStream" uid="uid://dvarfqm3k8atf" path="res://content/twm/sfx/twm_mouse_click.wav" id="3_5vfuk"]
+[ext_resource type="AudioStream" uid="uid://bbvj44x1afxc1" path="res://content/twm/sfx/twm_mouse_unclick.wav" id="4_ex2nd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x4qq7"]
 atlas = ExtResource("1_w0xpr")
@@ -83,11 +86,21 @@ animations = [{
 size = Vector2(1, 1)
 
 [node name="Mouse" type="CharacterBody2D" unique_id=299977185]
+script = ExtResource("1_x4qq7")
 
 [node name="MouseSprite" type="AnimatedSprite2D" parent="." unique_id=405779825]
+position = Vector2(-21, -21.007813)
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_42c2t")
 animation = &"idle"
+offset = Vector2(7, 7.0026045)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2107918796]
-position = Vector2(-6.5, -6.5)
+position = Vector2(-20.492188, -20.5)
 shape = SubResource("RectangleShape2D_42c2t")
+
+[node name="MouseClick" type="AudioStreamPlayer" parent="." unique_id=673228332]
+stream = ExtResource("3_5vfuk")
+
+[node name="MouseUnClick" type="AudioStreamPlayer" parent="." unique_id=1199836046]
+stream = ExtResource("4_ex2nd")

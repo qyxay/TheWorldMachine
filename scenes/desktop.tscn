@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://um75ejap7dub"]
 
 [ext_resource type="Texture2D" uid="uid://c84dumfup115y" path="res://content/twm/wallpaper/refuge.png" id="1_xxa2h"]
+[ext_resource type="PackedScene" uid="uid://dnq7j453fgyfc" path="res://scenes/mouse_root.tscn" id="2_7gre8"]
 
 [node name="Desktop" type="Node" unique_id=1744843332]
 
@@ -9,3 +10,5 @@ texture = ExtResource("1_xxa2h")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=531172730]
 zoom = Vector2(0.6, 0.6)
+
+[node name="Mouse" parent="." unique_id=299977185 instance=ExtResource("2_7gre8")]

@@ -92,7 +92,7 @@ script = ExtResource("1_x4qq7")
 position = Vector2(29.953514, 29.965525)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_42c2t")
-animation = &"idle"
+animation = &"click"
 offset = Vector2(-2.9882479, -2.9829416)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2107918796]
@@ -104,3 +104,11 @@ stream = ExtResource("3_5vfuk")
 
 [node name="MouseUnClick" type="AudioStreamPlayer" parent="." unique_id=1199836046]
 stream = ExtResource("4_ex2nd")
+
+[node name="StateMachine" type="Node" parent="." unique_id=1899628251]
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=641297833]
+
+[node name="Click" type="Node" parent="StateMachine" unique_id=871224289]
+
+[node name="Push" type="Node" parent="StateMachine" unique_id=1855331751]

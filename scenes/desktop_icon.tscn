@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://c432187al6vn4"]
+
+[ext_resource type="Script" uid="uid://2jbbmu2ra7b4" path="res://GDScript/desktop_icon.gd" id="1_ciefd"]
+[ext_resource type="Texture2D" uid="uid://7xwqenh7t2ri" path="res://content/twm/1.png" id="1_l5y4i"]
+[ext_resource type="Texture2D" uid="uid://bjj5a02dxncv3" path="res://content/twm/desktop_icons/folder.png" id="2_ciefd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xcqax"]
+size = Vector2(152.004, 99.971085)
+
+[node name="DesktopIcon" type="Area2D" unique_id=2102749259]
+script = ExtResource("1_ciefd")
+metadata/_edit_horizontal_guides_ = [18.756664]
+
+[node name="BackLight" type="Sprite2D" parent="." unique_id=379596103]
+modulate = Color(1, 1, 1, 0.9411765)
+position = Vector2(0.2336731, 8.83168)
+texture = ExtResource("1_l5y4i")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1031479658]
+position = Vector2(0, -5.241)
+scale = Vector2(2, 2)
+texture = ExtResource("2_ciefd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=41165373]
+position = Vector2(0.23134232, 8.872314)
+shape = SubResource("RectangleShape2D_xcqax")
+
+[node name="Label" type="Label" parent="." unique_id=347871052]
+offset_left = -96.859
+offset_top = 27.436
+offset_right = 53.298897
+offset_bottom = 50.436
+scale = Vector2(1.295, 1.295)
+text = "文档"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,14 +1,59 @@
 [gd_scene format=3 uid="uid://um75ejap7dub"]
 
-[ext_resource type="Texture2D" uid="uid://c84dumfup115y" path="res://content/twm/wallpaper/refuge.png" id="1_xxa2h"]
+[ext_resource type="Script" uid="uid://c4ni0pp52j4hs" path="res://GDScript/desktop.gd" id="1_81rff"]
 [ext_resource type="PackedScene" uid="uid://dnq7j453fgyfc" path="res://scenes/mouse_root.tscn" id="2_7gre8"]
+[ext_resource type="Texture2D" uid="uid://1m52rbpi7n7a" path="res://content/twm/wallpaper/factory.png" id="2_dcrhm"]
+[ext_resource type="Texture2D" uid="uid://badb5r3il3xgm" path="res://content/twm/desktop_icons/gallery.png" id="4_dcrhm"]
+[ext_resource type="PackedScene" uid="uid://c432187al6vn4" path="res://scenes/desktop_icon.tscn" id="4_ox5hf"]
+[ext_resource type="Texture2D" uid="uid://bjj5a02dxncv3" path="res://content/twm/desktop_icons/folder.png" id="5_veafp"]
+[ext_resource type="Texture2D" uid="uid://y4s8b8mkvg1n" path="res://content/twm/desktop_icons/exit.png" id="6_pkmwo"]
+[ext_resource type="Texture2D" uid="uid://d02uyihfk5u83" path="res://content/twm/desktop_icons/oneshot.png" id="7_gl26t"]
+[ext_resource type="Texture2D" uid="uid://ccqnjyplixhsc" path="res://content/twm/desktop_icons/wallpapers_folder.png" id="8_vcvwy"]
 
 [node name="Desktop" type="Node" unique_id=1744843332]
+script = ExtResource("1_81rff")
 
 [node name="WallPaper" type="Sprite2D" parent="." unique_id=13481959]
-texture = ExtResource("1_xxa2h")
+texture = ExtResource("2_dcrhm")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=531172730]
 zoom = Vector2(0.6, 0.6)
 
+[node name="DesktopIcons" type="Node2D" parent="." unique_id=528119356]
+modulate = Color(0.5882353, 0.39215687, 1, 0.7529412)
+
+[node name="Gallery" parent="DesktopIcons" unique_id=1193740943 instance=ExtResource("4_ox5hf")]
+position = Vector2(-643, -140)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_dcrhm")
+icon_name = "画廊"
+
+[node name="Folder" parent="DesktopIcons" unique_id=2102749259 instance=ExtResource("4_ox5hf")]
+position = Vector2(-234, -125)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_veafp")
+icon_name = "文档"
+
+[node name="Exit" parent="DesktopIcons" unique_id=213274787 instance=ExtResource("4_ox5hf")]
+position = Vector2(-462, 319)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("6_pkmwo")
+icon_name = "退出"
+
+[node name="Oneshot" parent="DesktopIcons" unique_id=1683838953 instance=ExtResource("4_ox5hf")]
+position = Vector2(-92, 328)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_gl26t")
+icon_name = "Oneshot"
+
+[node name="WallpapersFolder" parent="DesktopIcons" unique_id=125909713 instance=ExtResource("4_ox5hf")]
+position = Vector2(250, -168)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_vcvwy")
+icon_name = "画廊"
+
+[node name="ThemeColor" type="Node2D" parent="." unique_id=128391627]
+modulate = Color(0.57254905, 0.38431373, 0.9764706, 0.7176471)
+
 [node name="Mouse" parent="." unique_id=299977185 instance=ExtResource("2_7gre8")]
+z_index = 10

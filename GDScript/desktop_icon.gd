@@ -7,10 +7,10 @@ extends Area2D
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var label: Label = $Label
 
-@onready var Idle: BaseState = $StateMachine/Idle
-@onready var Hover: BaseState = $StateMachine/Hover
-@onready var Click: BaseState = $StateMachine/Click
 
+var idle: BaseState
+var hover: BaseState
+var click: BaseState
 
 var mouse:CharacterBody2D
 var state:BaseState
@@ -20,34 +20,42 @@ func _ready() -> void:
 	sprite.texture = texture
 	label.text = icon_name
 	
-	state = Idle
+	idle = Setting.IconIdle.new()
+	hover = Setting.IconHover.new()
+	click = Setting.IconClick.new()
+
+	idle.host = self
+	hover.host = self
+	click.host = self
+
+	state = idle
 	mouse = get_tree().root.get_node("Desktop/Mouse")
 
 func _input(event:InputEvent):
 	if event.is_action_pressed("mouse_left"):
-		if state == Hover:
-			change_state(Click)
-		elif state == Click:
-			if mouse.is_in_icon:
-				change_state(Hover)
-			else:
-				change_state(Idle)
+		if state == hover:
+			change_state(click)
+		elif state == click:
+			if mouse.hover_icon != self:
+				change_state(idle)
 
-func _physics_process(_delta: float) -> void:
-	state.update(_delta)
+func _process(delta: float) -> void:
+	if state:
+		state.update(delta)
 
 func _on_body_entered(body: Node2D) -> void:
 	if body == mouse:
-		if state == Idle:
-			change_state(Hover)
+		if state == idle:
+			change_state(hover)
 
 func _on_body_exited(body: Node2D) -> void:
 	if body == mouse:
-		if state == Hover:
-			change_state(Idle)
-			
+		if state == hover:
+			change_state(idle)
 
 func change_state(to_state:BaseState):
+	if state == to_state:
+		return
 	state.exit()
 	state = to_state
 	state.host = self

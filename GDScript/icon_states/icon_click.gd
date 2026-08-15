@@ -3,7 +3,7 @@ extends BaseState
 func enter():
 	sname = "click"
 	set_modulate_v(1.0)
-	
+
 func exit():
 	set_modulate_v(0.6)
 	

@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://2jbbmu2ra7b4" path="res://GDScript/desktop_icon.gd" id="1_ciefd"]
 [ext_resource type="Texture2D" uid="uid://dvd7et861bbmk" path="res://content/twm/back_light.png" id="2_bhc0c"]
 [ext_resource type="Texture2D" uid="uid://bjj5a02dxncv3" path="res://content/twm/desktop_icons/folder.png" id="2_ciefd"]
-[ext_resource type="Script" uid="uid://dvkwy8p6da1kv" path="res://GDScript/icon_idle.gd" id="4_x2r5c"]
-[ext_resource type="Script" uid="uid://b6igchd0h8abr" path="res://GDScript/icon_hover.gd" id="5_sw3u1"]
-[ext_resource type="Script" uid="uid://dgwrdau2qve7u" path="res://GDScript/icon_click.gd" id="6_bhc0c"]
+[ext_resource type="Script" uid="uid://dvkwy8p6da1kv" path="res://GDScript/icon_states/icon_idle.gd" id="4_x2r5c"]
+[ext_resource type="Script" uid="uid://b6igchd0h8abr" path="res://GDScript/icon_states/icon_hover.gd" id="5_sw3u1"]
+[ext_resource type="Script" uid="uid://dgwrdau2qve7u" path="res://GDScript/icon_states/icon_click.gd" id="6_bhc0c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xcqax"]
 size = Vector2(152.004, 99.971085)

@@ -1,23 +1,23 @@
 [gd_scene format=3 uid="uid://c432187al6vn4"]
 
 [ext_resource type="Script" uid="uid://2jbbmu2ra7b4" path="res://GDScript/desktop_icon.gd" id="1_ciefd"]
-[ext_resource type="Texture2D" uid="uid://dvd7et861bbmk" path="res://content/twm/back_light.png" id="2_bhc0c"]
+[ext_resource type="Texture2D" uid="uid://7xwqenh7t2ri" path="res://content/twm/1.png" id="1_l5y4i"]
 [ext_resource type="Texture2D" uid="uid://bjj5a02dxncv3" path="res://content/twm/desktop_icons/folder.png" id="2_ciefd"]
 [ext_resource type="Script" uid="uid://dvkwy8p6da1kv" path="res://GDScript/icon_idle.gd" id="4_x2r5c"]
 [ext_resource type="Script" uid="uid://b6igchd0h8abr" path="res://GDScript/icon_hover.gd" id="5_sw3u1"]
-[ext_resource type="Script" uid="uid://dgwrdau2qve7u" path="res://GDScript/icon_click.gd" id="6_bhc0c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xcqax"]
 size = Vector2(152.004, 99.971085)
 
 [node name="DesktopIcon" type="Area2D" unique_id=2102749259 groups=["icon_group"]]
 script = ExtResource("1_ciefd")
+icon_name = null
 metadata/_edit_horizontal_guides_ = [18.756664]
 
 [node name="BackLight" type="Sprite2D" parent="." unique_id=379596103]
-modulate = Color(0.6, 0.6, 0.6, 0.9411765)
+modulate = Color(1, 1, 1, 0.9411765)
 position = Vector2(0.2336731, 8.83168)
-texture = ExtResource("2_bhc0c")
+texture = ExtResource("1_l5y4i")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1031479658]
 position = Vector2(0, -5.241)
@@ -45,9 +45,6 @@ script = ExtResource("4_x2r5c")
 
 [node name="Hover" type="Node" parent="StateMachine" unique_id=823750244]
 script = ExtResource("5_sw3u1")
-
-[node name="Click" type="Node" parent="StateMachine" unique_id=1766043864]
-script = ExtResource("6_bhc0c")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

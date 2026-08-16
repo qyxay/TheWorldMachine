@@ -10,7 +10,7 @@ func exit():
 	pass
 	
 func update(_delta):
-	if host.hover_icon == null:
+	if Setting.mouse_at_icon == null:
 		host.change_state(host.idle)
 	elif Input.is_action_just_pressed("mouse_left"):
 		host.change_state(host.push)

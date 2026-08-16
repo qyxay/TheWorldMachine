@@ -28,7 +28,7 @@ func _ready() -> void:
 	hover.host = self
 	click.host = self
 
-	state = idle
+	change_state(idle)
 	mouse = get_tree().root.get_node("Desktop/Mouse")
 
 func _input(event:InputEvent):
@@ -36,27 +36,32 @@ func _input(event:InputEvent):
 		if state == hover:
 			change_state(click)
 		elif state == click:
-			if mouse.hover_icon != self:
+			if Setting.mouse_at_icon != self:
 				change_state(idle)
 
 func _process(delta: float) -> void:
+	print(Setting.mouse_at_icon)
 	if state:
 		state.update(delta)
-
-func _on_body_entered(body: Node2D) -> void:
-	if body == mouse:
-		if state == idle:
-			change_state(hover)
-
-func _on_body_exited(body: Node2D) -> void:
-	if body == mouse:
-		if state == hover:
-			change_state(idle)
 
 func change_state(to_state:BaseState):
 	if state == to_state:
 		return
-	state.exit()
+	if state: state.exit()
 	state = to_state
 	state.host = self
 	state.enter()
+
+func round_pos(pos:Vector2):
+	var snap_x:float = clamp(round(pos.x / 300) * 300 + 100, -800, 700)
+	var snap_y:float = clamp(round(pos.y / 200) * 200, -400, 200)
+	var snap_pos:Vector2 = Vector2(snap_x, snap_y)
+	return snap_pos
+
+
+func _on_mouse_entered() -> void:
+	Setting.mouse_at_icon = self
+
+func _on_mouse_exited() -> void:
+	if Setting.mouse_at_icon == self:
+		Setting.mouse_at_icon = null

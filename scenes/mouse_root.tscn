@@ -5,42 +5,42 @@
 [ext_resource type="AudioStream" uid="uid://dvarfqm3k8atf" path="res://content/twm/sfx/twm_mouse_click.wav" id="3_5vfuk"]
 [ext_resource type="AudioStream" uid="uid://bbvj44x1afxc1" path="res://content/twm/sfx/twm_mouse_unclick.wav" id="4_ex2nd"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_x4qq7"]
-atlas = ExtResource("1_w0xpr")
-region = Rect2(16, 32, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rns1s"]
-atlas = ExtResource("1_w0xpr")
-region = Rect2(32, 32, 16, 16)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_5vfuk"]
 atlas = ExtResource("1_w0xpr")
-region = Rect2(0, 32, 16, 16)
+region = Rect2(32, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ex2nd"]
 atlas = ExtResource("1_w0xpr")
-region = Rect2(80, 32, 16, 16)
+region = Rect2(64, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ih4kp"]
 atlas = ExtResource("1_w0xpr")
-region = Rect2(96, 32, 16, 16)
+region = Rect2(0, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rjjoy"]
 atlas = ExtResource("1_w0xpr")
-region = Rect2(48, 32, 16, 16)
+region = Rect2(160, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eyqm2"]
 atlas = ExtResource("1_w0xpr")
-region = Rect2(64, 32, 16, 16)
+region = Rect2(192, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ev8dk"]
+atlas = ExtResource("1_w0xpr")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2ljq"]
+atlas = ExtResource("1_w0xpr")
+region = Rect2(128, 64, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_42c2t"]
 animations = [{
 "frames": [{
-"duration": 1.2,
-"texture": SubResource("AtlasTexture_x4qq7")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vfuk")
 }, {
-"duration": 1.2,
-"texture": SubResource("AtlasTexture_rns1s")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ex2nd")
 }],
 "loop": 1,
 "name": &"click",
@@ -48,7 +48,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5vfuk")
+"texture": SubResource("AtlasTexture_ih4kp")
 }],
 "loop": 1,
 "name": &"idle",
@@ -56,10 +56,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ex2nd")
+"texture": SubResource("AtlasTexture_rjjoy")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ih4kp")
+"texture": SubResource("AtlasTexture_eyqm2")
 }],
 "loop": 1,
 "name": &"other",
@@ -67,7 +67,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rjjoy")
+"texture": SubResource("AtlasTexture_ev8dk")
 }],
 "loop": 1,
 "name": &"prepush",
@@ -75,7 +75,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_eyqm2")
+"texture": SubResource("AtlasTexture_o2ljq")
 }],
 "loop": 1,
 "name": &"push",
@@ -83,20 +83,22 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_42c2t"]
-size = Vector2(1, 1)
+size = Vector2(8.9921875, 8)
 
 [node name="Mouse" type="CharacterBody2D" unique_id=299977185]
 script = ExtResource("1_x4qq7")
 
 [node name="MouseSprite" type="AnimatedSprite2D" parent="." unique_id=405779825]
+visible = false
 position = Vector2(29.953514, 29.965525)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_42c2t")
-animation = &"click"
+animation = &"idle"
+autoplay = "idle"
 offset = Vector2(-2.9882479, -2.9829416)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2107918796]
-position = Vector2(-20.492188, -20.5)
+position = Vector2(-16.496094, -17)
 shape = SubResource("RectangleShape2D_42c2t")
 
 [node name="MouseClick" type="AudioStreamPlayer" parent="." unique_id=673228332]

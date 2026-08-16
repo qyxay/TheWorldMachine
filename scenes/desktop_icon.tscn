@@ -49,5 +49,5 @@ script = ExtResource("5_sw3u1")
 [node name="Click" type="Node" parent="StateMachine" unique_id=1766043864]
 script = ExtResource("6_bhc0c")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -10,5 +10,5 @@ func exit():
 	pass
 	
 func update(_delta):
-	if host.hover_icon:
+	if Setting.mouse_at_icon:
 		host.change_state(host.click)

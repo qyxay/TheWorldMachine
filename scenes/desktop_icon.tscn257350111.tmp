@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://c432187al6vn4"]
+
+[ext_resource type="Script" uid="uid://2jbbmu2ra7b4" path="res://GDScript/desktop_icon.gd" id="1_ciefd"]
+[ext_resource type="Texture2D" uid="uid://dvd7et861bbmk" path="res://content/twm/back_light.png" id="2_bhc0c"]
+[ext_resource type="Texture2D" uid="uid://bjj5a02dxncv3" path="res://content/twm/desktop_icons/folder.png" id="2_ciefd"]
+[ext_resource type="Script" uid="uid://dvkwy8p6da1kv" path="res://GDScript/icon_states/icon_idle.gd" id="4_x2r5c"]
+[ext_resource type="Script" uid="uid://b6igchd0h8abr" path="res://GDScript/icon_states/icon_hover.gd" id="5_sw3u1"]
+[ext_resource type="Script" uid="uid://dgwrdau2qve7u" path="res://GDScript/icon_states/icon_click.gd" id="6_bhc0c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xcqax"]
+size = Vector2(152.004, 99.971085)
+
+[node name="DesktopIcon" type="Area2D" unique_id=2102749259 groups=["icon_group"]]
+script = ExtResource("1_ciefd")
+metadata/_edit_horizontal_guides_ = [18.756664]
+
+[node name="BackLight" type="Sprite2D" parent="." unique_id=379596103]
+modulate = Color(0.6, 0.6, 0.6, 0.9411765)
+position = Vector2(0.2336731, 8.83168)
+texture = ExtResource("2_bhc0c")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1031479658]
+position = Vector2(0, -5.241)
+scale = Vector2(2, 2)
+texture = ExtResource("2_ciefd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=41165373]
+position = Vector2(0.23134232, 8.872314)
+shape = SubResource("RectangleShape2D_xcqax")
+
+[node name="Label" type="Label" parent="." unique_id=347871052]
+offset_left = -96.859
+offset_top = 27.436
+offset_right = 53.298897
+offset_bottom = 50.436
+scale = Vector2(1.295, 1.295)
+text = "文档"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StateMachine" type="Node" parent="." unique_id=848323974]
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=589209781]
+script = ExtResource("4_x2r5c")
+
+[node name="Hover" type="Node" parent="StateMachine" unique_id=823750244]
+script = ExtResource("5_sw3u1")
+
+[node name="Click" type="Node" parent="StateMachine" unique_id=1766043864]
+script = ExtResource("6_bhc0c")

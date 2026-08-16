@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="v-2.0"
+config/name="v-2.1"
 run/main_scene="uid://um75ejap7dub"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"

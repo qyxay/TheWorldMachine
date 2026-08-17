@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bjj5a02dxncv3" path="res://content/twm/desktop_icons/folder.png" id="5_veafp"]
 [ext_resource type="Texture2D" uid="uid://y4s8b8mkvg1n" path="res://content/twm/desktop_icons/exit.png" id="6_pkmwo"]
 [ext_resource type="Texture2D" uid="uid://d02uyihfk5u83" path="res://content/twm/desktop_icons/oneshot.png" id="7_gl26t"]
+[ext_resource type="Script" uid="uid://s36k8qg4a85c" path="res://GDScript/icons/icon_exit.gd" id="7_nikxi"]
 [ext_resource type="Texture2D" uid="uid://ccqnjyplixhsc" path="res://content/twm/desktop_icons/wallpapers_folder.png" id="8_vcvwy"]
 
 [node name="Desktop" type="Node" unique_id=1744843332]
@@ -38,6 +39,7 @@ icon_name = "文档"
 [node name="Exit" parent="DesktopIcons" unique_id=213274787 instance=ExtResource("4_ox5hf")]
 position = Vector2(-462, 319)
 scale = Vector2(1.5, 1.5)
+script = ExtResource("7_nikxi")
 texture = ExtResource("6_pkmwo")
 icon_name = "退出"
 
@@ -51,7 +53,7 @@ icon_name = "Oneshot"
 position = Vector2(250, -168)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("8_vcvwy")
-icon_name = "画廊"
+icon_name = "壁纸"
 
 [node name="ThemeColor" type="Node2D" parent="." unique_id=128391627]
 modulate = Color(0.57254905, 0.38431373, 0.9764706, 0.7176471)

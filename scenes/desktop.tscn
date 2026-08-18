@@ -11,7 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://d02uyihfk5u83" path="res://content/twm/desktop_icons/oneshot.png" id="7_gl26t"]
 [ext_resource type="Script" uid="uid://s36k8qg4a85c" path="res://GDScript/icons/icon_exit.gd" id="7_nikxi"]
 [ext_resource type="Texture2D" uid="uid://ccqnjyplixhsc" path="res://content/twm/desktop_icons/wallpapers_folder.png" id="8_vcvwy"]
-[ext_resource type="Script" uid="uid://csfspv6vw4t83" path="res://GDScript/v_box_container.gd" id="12_q2hki"]
+[ext_resource type="Script" uid="uid://bn3ybxk6xt0op" path="res://GDScript/set_mission.gd" id="12_nd1jb"]
+[ext_resource type="PackedScene" uid="uid://tnpdgli2j0u7" path="res://scenes/base_window.tscn" id="13_nd1jb"]
 
 [sub_resource type="Theme" id="Theme_nikxi"]
 
@@ -88,15 +89,24 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_nikxi")
 theme_override_constants/separation = 0
-script = ExtResource("12_q2hki")
+script = ExtResource("12_nd1jb")
 
-[node name="Color" type="ColorRect" parent="Mission/VBoxContainer" unique_id=1450565892]
+[node name="Color" type="ColorRect" parent="Mission/VBoxContainer" unique_id=802467859]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.08
+size_flags_stretch_ratio = 0.17
 metadata/do_color = true
 
-[node name="Black" type="ColorRect" parent="Mission/VBoxContainer" unique_id=153452526]
-layout_mode = 2
-size_flags_vertical = 3
+[node name="Black" type="ColorRect" parent="Mission/VBoxContainer/Color" unique_id=1432594308]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 4.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="BaseWindow" parent="." unique_id=1655628700 instance=ExtResource("13_nd1jb")]
+position = Vector2(-478, -215)
+scale = Vector2(1.015, 0.85)

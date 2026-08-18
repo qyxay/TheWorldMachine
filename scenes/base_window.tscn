@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://tnpdgli2j0u7"]
+
+[ext_resource type="Script" uid="uid://cet7n2fd4htuj" path="res://GDScript/set_windows.gd" id="1_onvrl"]
+
+[node name="BaseWindow" type="Node2D" unique_id=1655628700]
+
+[node name="Control" type="Control" parent="." unique_id=1371948071]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1154.0
+offset_bottom = 652.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=1519932506]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+script = ExtResource("1_onvrl")
+
+[node name="UpBorder" type="ColorRect" parent="Control/VBoxContainer" unique_id=2018541040]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.17
+metadata/do_color = true
+
+[node name="UpInner" type="ColorRect" parent="Control/VBoxContainer/UpBorder" unique_id=1666676445]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="DownBorder" type="ColorRect" parent="Control/VBoxContainer" unique_id=838546002]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.57
+metadata/do_color = true
+
+[node name="DownInner" type="ColorRect" parent="Control/VBoxContainer/DownBorder" unique_id=925856473]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

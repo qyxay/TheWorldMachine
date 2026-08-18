@@ -11,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://d02uyihfk5u83" path="res://content/twm/desktop_icons/oneshot.png" id="7_gl26t"]
 [ext_resource type="Script" uid="uid://s36k8qg4a85c" path="res://GDScript/icons/icon_exit.gd" id="7_nikxi"]
 [ext_resource type="Texture2D" uid="uid://ccqnjyplixhsc" path="res://content/twm/desktop_icons/wallpapers_folder.png" id="8_vcvwy"]
+[ext_resource type="Script" uid="uid://csfspv6vw4t83" path="res://GDScript/v_box_container.gd" id="12_q2hki"]
+
+[sub_resource type="Theme" id="Theme_nikxi"]
 
 [node name="Desktop" type="Node" unique_id=1744843332]
 script = ExtResource("1_81rff")
@@ -25,32 +28,32 @@ zoom = Vector2(0.6, 0.6)
 script = ExtResource("3_vcvwy")
 
 [node name="Gallery" parent="DesktopIcons" unique_id=1193740943 instance=ExtResource("4_ox5hf")]
-position = Vector2(-643, -140)
+position = Vector2(-766, -190)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("4_dcrhm")
 icon_name = "画廊"
 
 [node name="Folder" parent="DesktopIcons" unique_id=2102749259 instance=ExtResource("4_ox5hf")]
-position = Vector2(-234, -125)
+position = Vector2(-780, -447)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("5_veafp")
 icon_name = "文档"
 
 [node name="Exit" parent="DesktopIcons" unique_id=213274787 instance=ExtResource("4_ox5hf")]
-position = Vector2(-462, 319)
+position = Vector2(-772, 286)
 scale = Vector2(1.5, 1.5)
 script = ExtResource("7_nikxi")
 texture = ExtResource("6_pkmwo")
 icon_name = "退出"
 
 [node name="Oneshot" parent="DesktopIcons" unique_id=1683838953 instance=ExtResource("4_ox5hf")]
-position = Vector2(-92, 328)
+position = Vector2(-787, 57)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("7_gl26t")
 icon_name = "Oneshot"
 
 [node name="WallpapersFolder" parent="DesktopIcons" unique_id=125909713 instance=ExtResource("4_ox5hf")]
-position = Vector2(250, -168)
+position = Vector2(-462, -436)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("8_vcvwy")
 icon_name = "壁纸"
@@ -60,3 +63,40 @@ modulate = Color(0.57254905, 0.38431373, 0.9764706, 0.7176471)
 
 [node name="Mouse" parent="." unique_id=299977185 instance=ExtResource("2_7gre8")]
 z_index = 10
+
+[node name="Mission" type="Control" parent="." unique_id=344984201]
+layout_mode = 3
+anchor_left = -0.8307292
+anchor_top = 0.720679
+anchor_right = 0.8359375
+anchor_bottom = 0.83179015
+offset_left = -3.0
+offset_top = 23.00003
+offset_right = -3.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Mission" unique_id=905868479]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_nikxi")
+theme_override_constants/separation = 0
+script = ExtResource("12_q2hki")
+
+[node name="Color" type="ColorRect" parent="Mission/VBoxContainer" unique_id=1450565892]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.08
+metadata/do_color = true
+
+[node name="Black" type="ColorRect" parent="Mission/VBoxContainer" unique_id=153452526]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)

@@ -103,9 +103,11 @@ shape = SubResource("RectangleShape2D_42c2t")
 
 [node name="MouseClick" type="AudioStreamPlayer" parent="." unique_id=673228332]
 stream = ExtResource("3_5vfuk")
+volume_db = 1.0
 
 [node name="MouseUnClick" type="AudioStreamPlayer" parent="." unique_id=1199836046]
 stream = ExtResource("4_ex2nd")
+volume_db = 1.0
 
 [node name="StateMachine" type="Node" parent="." unique_id=1899628251]
 
